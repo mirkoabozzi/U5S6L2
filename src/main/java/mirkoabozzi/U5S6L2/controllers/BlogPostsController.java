@@ -15,7 +15,6 @@ public class BlogPostsController {
     @Autowired
     BlogPostsService blogPostsService;
 
-
     //GET ALL
     @GetMapping
     private List<BlogPost> getAllBlogPosts() {

@@ -38,4 +38,11 @@ public class AuthorsController {
     private Author findByIdAndUpdate(@PathVariable Long id, @RequestBody Author body) {
         return authorsService.findByIdAndUpdate(id, body);
     }
+
+    //DELETE
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    private void findByIdAndDelete(@PathVariable Long id) {
+        authorsService.findByIdAndDelete(id);
+    }
 }

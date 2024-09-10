@@ -44,4 +44,10 @@ public class AuthorsService {
         return found;
     }
 
+    //DELETE
+    public void findByIdAndDelete(Long id) {
+        Author found = this.findById(id);
+        this.authorList.remove(found);
+    }
+
 }

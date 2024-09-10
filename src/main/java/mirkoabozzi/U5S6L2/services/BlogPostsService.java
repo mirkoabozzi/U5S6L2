@@ -18,7 +18,6 @@ public class BlogPostsService {
     }
 
     //GET BLOGPOST
-
     public BlogPost findById(Long id) {
         BlogPost found = this.blogPostList.stream().filter(blogPost -> blogPost.getId() == id).findFirst().orElse(null);
         if (found == null) throw new NotFoundException(id);
@@ -45,7 +44,6 @@ public class BlogPostsService {
     }
 
     //DELETE
-
     public void findBiIdAndDelete(Long id) {
         BlogPost found = this.findById(id);
         this.blogPostList.remove(found);
