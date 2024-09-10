@@ -44,4 +44,11 @@ public class BlogPostsService {
         return found;
     }
 
+    //DELETE
+
+    public void findBiIdAndDelete(Long id) {
+        BlogPost found = this.findById(id);
+        this.blogPostList.remove(found);
+    }
+
 }
