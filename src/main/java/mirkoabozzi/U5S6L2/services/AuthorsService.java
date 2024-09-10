@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class AuthorsService {
@@ -24,5 +25,14 @@ public class AuthorsService {
         else return found;
     }
 
-    
+    //POST
+    public Author saveAuthor(Author payload) {
+        Random r = new Random();
+        payload.setId(r.nextInt(2000, 3000));
+        payload.setAvatar("http://localhost:8080/?name=" + payload.getName() + "+" + payload.getSurname());
+        this.authorList.add(payload);
+        return payload;
+    }
+
+
 }
