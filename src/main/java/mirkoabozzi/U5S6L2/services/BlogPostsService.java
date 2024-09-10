@@ -34,4 +34,14 @@ public class BlogPostsService {
         return payload;
     }
 
+    //PUT
+    public BlogPost findByIdAndUpdate(Long id, BlogPost newBlogPost) {
+        BlogPost found = this.findById(id);
+        found.setCategory(newBlogPost.getCategory());
+        found.setTitle(newBlogPost.getTitle());
+        found.setContent(newBlogPost.getContent());
+        found.setReadingTime(newBlogPost.getReadingTime());
+        return found;
+    }
+
 }
