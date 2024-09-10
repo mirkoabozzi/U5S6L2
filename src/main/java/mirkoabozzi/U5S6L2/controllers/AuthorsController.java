@@ -32,4 +32,10 @@ public class AuthorsController {
     private Author saveAuthor(@RequestBody Author body) {
         return authorsService.saveAuthor(body);
     }
+
+    //PUT
+    @PutMapping("/{id}")
+    private Author findByIdAndUpdate(@PathVariable Long id, @RequestBody Author body) {
+        return authorsService.findByIdAndUpdate(id, body);
+    }
 }

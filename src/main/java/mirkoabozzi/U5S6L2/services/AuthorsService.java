@@ -34,5 +34,14 @@ public class AuthorsService {
         return payload;
     }
 
+    //PUT
+    public Author findByIdAndUpdate(Long id, Author newAuthor) {
+        Author found = this.findById(id);
+        found.setName(newAuthor.getName());
+        found.setSurname(newAuthor.getSurname());
+        found.setEmail(newAuthor.getEmail());
+        found.setBirthDate(newAuthor.getBirthDate());
+        return found;
+    }
 
 }
